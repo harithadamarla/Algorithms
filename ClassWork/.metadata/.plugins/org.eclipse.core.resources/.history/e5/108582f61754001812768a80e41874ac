@@ -1,0 +1,21 @@
+
+public class TowersOfHanoi {
+	void transfer(int n,char frompeg,char auxpeg,char topeg){
+		if(n==1) {
+			System.out.println("Move disk"+n+" from peg"+frompeg+"to"+topeg);
+			return;
+		}
+		transfer(n-1,'A','C','B');
+		
+		System.out.println("Move disk from"+n+"peg"frompeg+"to"+topeg);
+		transfer(n-1,'B','A','C');
+		
+		
+	}
+
+	public static void main(String args[]) {
+		TowersOfHanoi h=new TowersOfHanoi();
+		h.transfer(3,'A','B','C');
+		
+	}
+}

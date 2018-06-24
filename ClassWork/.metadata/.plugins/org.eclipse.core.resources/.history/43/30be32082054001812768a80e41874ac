@@ -1,0 +1,23 @@
+
+public class TowersOfHanoi {
+	void transfer(int n,char frompeg,char topeg, char auxpeg){
+//		System.out.println(n);
+		if(n==1) {
+			System.out.println("Move disk 1 from "+frompeg+"to"+topeg);
+			return;
+		}
+		transfer(n-1,frompeg,auxpeg,topeg);
+		
+		System.out.println("Move disk "+n+"from"+frompeg+"to"+topeg);
+		transfer(n-1,auxpeg,topeg,frompeg);
+		
+		
+	}
+
+	public static void main(String args[]) {
+		TowersOfHanoi h=new TowersOfHanoi();
+//		int n=4;
+		h.transfer(4,'A','C','B');
+		
+	}
+}
